@@ -12,6 +12,7 @@ dist
 dist-ssr
 .husky
 .vscode
+coverage
 *.local
 
 # Editor directories and files

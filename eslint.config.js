@@ -19,16 +19,18 @@ export default tseslint.config(
         sourceType: "module",
         ecmaVersion: "latest",
         parser: tseslint.parser,
+        tsconfigRootDir: import.meta.dirname,
       },
     },
   },
   {
-    ignores: ["**/dist/**", "**/*.config.js", "**/*.config.ts", "**/.vscode/**"],
+    ignores: ["**/dist/**", "**/*.config.js", "**/*.config.ts", "**/.vscode/**", "**/coverage/**"],
   },
   {
     rules: {
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/explicit-function-return-type": "error",
+      "@typescript-eslint/no-redundant-type-constituents": "off"
     },
   }
 );
