@@ -6,6 +6,7 @@
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
+    "declaration": true,
 
     "baseUrl": ".",
     "paths": {
@@ -26,5 +27,5 @@
   },
 
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "coverage", ".vscode"]
 }

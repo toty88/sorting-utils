@@ -1,8 +1,19 @@
 {
-  "name": "eslint-test",
+  "name": "sorting-utils",
   "private": false,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/sorting-utils.umd.cjs",
+  "exports":{
+    ".":{
+      "import": ".dist/sorting-utils.js",
+      "require": ".dist/sorting-utils.umd.cjs"
+    }
+  },
+  "publishConfig":{
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": ["dist"],
   "scripts": {
     "build": "tsc && vite build",
     "preview": "vite preview",

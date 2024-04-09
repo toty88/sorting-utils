@@ -32,6 +32,8 @@ export default tseslint.config(
       "**/coverage/**",
       "**/.husky/**",
       "**/*.json/**",
+      ".gitignore",
+      ".prettireignore",
       "commitlint.config.ts",
     ],
   },

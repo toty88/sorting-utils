@@ -1,5 +1,1 @@
-const test = (): void => {
-  console.log("hola");
-};
-
-test();
+export * from '@/arrays'
