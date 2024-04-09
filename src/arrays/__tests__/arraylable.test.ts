@@ -1,22 +1,20 @@
-import { arraylable } from '../arraylable'
-import { describe, expect, test } from 'vitest'
+import { arraylable } from "../arraylable";
+import { describe, expect, test } from "vitest";
 
-describe('arraylable', () =>
-{
+describe("arraylable", () => {
   test.each([
     [
       [1, 2],
-      [1, 2]
+      [1, 2],
     ],
     [[], []],
-    ['fran', []],
+    ["fran", []],
     [1, []],
     [null, []],
     [undefined, []],
     [{}, []],
-    [{ name: 'toty' }, []]
-  ])('arraylable(%j) should be %j', (arg, expected) =>
-  {
-    expect(arraylable(arg)).toEqual(expected)
-  })
-})
+    [{ name: "toty" }, []],
+  ])("arraylable(%j) should be %j", (arg, expected) => {
+    expect(arraylable(arg)).toEqual(expected);
+  });
+});

@@ -24,13 +24,19 @@ export default tseslint.config(
     },
   },
   {
-    ignores: ["**/dist/**", "**/*.config.js", "**/*.config.ts", "**/.vscode/**", "**/coverage/**"],
+    ignores: [
+      "**/dist/**",
+      "**/*.config.js",
+      "**/*.config.ts",
+      "**/.vscode/**",
+      "**/coverage/**",
+    ],
   },
   {
     rules: {
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/explicit-function-return-type": "error",
-      "@typescript-eslint/no-redundant-type-constituents": "off"
+      "@typescript-eslint/no-redundant-type-constituents": "off",
     },
-  }
+  },
 );
