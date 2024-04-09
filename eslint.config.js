@@ -30,6 +30,9 @@ export default tseslint.config(
       "**/*.config.ts",
       "**/.vscode/**",
       "**/coverage/**",
+      "**/.husky/**",
+      "**/*.json/**",
+      "commitlint.config.ts",
     ],
   },
   {
