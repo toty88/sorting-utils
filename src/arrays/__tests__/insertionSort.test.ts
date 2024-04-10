@@ -3,10 +3,15 @@ import { describe, expect, test } from 'vitest'
 
 describe('insertionSort', () => {
   test.each([
+    [[], []],
     [[2], [2]],
     [
       [5, 2],
       [2, 5]
+    ],
+    [
+      [5, 2, 1],
+      [1, 2, 5]
     ],
     [
       [8, 3, 5, 7, 1],
