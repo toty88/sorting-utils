@@ -33,6 +33,7 @@
     "@commitlint/cli": "19.2.1",
     "@commitlint/config-conventional": "19.1.0",
     "@stryker-mutator/core": "^8.2.6",
+    "@stryker-mutator/typescript-checker": "8.2.6",
     "@stryker-mutator/vitest-runner": "^8.2.6",
     "@types/lint-staged": "13.3.0",
     "@types/node": "20.12.5",

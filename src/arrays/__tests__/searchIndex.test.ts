@@ -2,8 +2,15 @@ import { searchIndex } from '../searchIndex'
 import { describe, expect, test } from 'vitest'
 
 describe('searchIndex', () => {
+  test('should return -1 for empty input', () => {
+    const emptyArray: number[] = []
+    const index = searchIndex(emptyArray, 2)
+    expect(index).toEqual(-1)
+  })
+
   test.each([
-    [[], 2, -1],
+    [[1], 1, 0],
+    [[1], 2, -1],
     [[1, 2], 2, 1],
     [[1, 2, 3, 4], 3, 2],
     [[1, 2, 3, 4, 5, 7, 8, 9], 6, -1],
