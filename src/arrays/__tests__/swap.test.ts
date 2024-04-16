@@ -3,6 +3,7 @@ import { describe, expect, test } from 'vitest'
 
 describe('swap', () => {
   test.each([
+    [[5], 0, 0, [5]],
     [[5, 2], 0, 0, [5, 2]],
     [[5, 2], 0, 1, [2, 5]],
     [[5, 2], 1, 0, [2, 5]],

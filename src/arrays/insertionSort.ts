@@ -1,21 +1,26 @@
+/**
+ * Sorts an array of numbers using the insertion sort algorithm.
+ *
+ * Insertion sort works by iterating through the unsorted portion of the array,
+ * picking the next element, and inserting it into its correct position within the
+ * sorted part of the array.
+ *
+ * Time complexity: O(n^2) in the average/worst case, O(n) in the best case (already sorted)
+ * Space complexity: O(1)
+ *
+ * @param arr The array of numbers to be sorted
+ * @returns A new sorted array (does not modify the original array)
+ */
 export const insertionSort = (arr: number[]): number[] => {
   if (arr.length < 2) return arr
   const newArr = [...arr]
-  /* [5, 3, 4] */
-  //  0, 1, 2
   for (let i = 1; i < newArr.length; i++) {
-    // current = 3
     const current = newArr[i]
-    // j = 0
     let j = i - 1
-    // newArr[j] (5) > current (3)
     while (j >= 0 && newArr[j] > current) {
-      // newArr[1] = 5
       newArr[j + 1] = newArr[j]
-      // -1
       j--
     }
-    // newArr[-1 + 1 (0)] = 3
     newArr[j + 1] = current
   }
   return newArr

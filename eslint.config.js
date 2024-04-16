@@ -42,6 +42,7 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/explicit-function-return-type": "error",
       "@typescript-eslint/no-redundant-type-constituents": "off",
+      "@typescript-eslint/no-for-in-array": "off"
     },
   },
 );
