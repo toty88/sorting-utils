@@ -1,10 +1,20 @@
 import { merge } from '@/arrays/merge'
 
-/** @see mergeSort O(n log (n)) en el mejor, promedio y peor de los casos */
-export const mergeSort = <T>(
-  arr: T[],
-  compare: (left: T, right: T) => boolean
-): T[] => {
+/**
+ * Sorts an array of numbers using the merge sort algorithm.
+ *
+ * Merge sort works by recursively dividing the array into halves, then sorting
+ * those halves independently, and finally merging the sorted halves back together
+ * in a way that preserves the overall sorted order.
+ *
+ * Time complexity: O(n log n) in average and worst cases
+ * Space complexity: O(n) (due to recursion and temporary arrays)
+ *
+ * @param arr The array of <T> to be sorted
+ * @param compare A function which takes two T arguments, compare them and returns a boolean
+ * @returns A new sorted array (does not modify the original array)
+ */
+export const mergeSort = <T>(arr: T[], compare: (left: T, right: T) => boolean): T[] => {
   if (arr.length <= 1) return arr
 
   const sort = (array: T[]): T[] => {

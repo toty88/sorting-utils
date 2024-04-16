@@ -1,4 +1,4 @@
-import { type AnyFunction } from '@/types/types'
+// import { type AnyFunction } from '@/types/types'
 
 /**
  * The Parameters utility type lets you get the parameters of a function type.
@@ -6,14 +6,14 @@ import { type AnyFunction } from '@/types/types'
  */
 
 /** @see  debounce callback should be issued once within set time, if debounce called again time gets reset */
-export const debounce = <T extends AnyFunction>(cb: T, delay: number): ((...args: Parameters<T>) => void) => {
+export const debounce = <T extends (...args: Parameters<T>) => ReturnType<T>>(
+  cb: T,
+  delay: number
+): ((...args: Parameters<T>) => void) => {
   let timeOut: NodeJS.Timeout
 
   return function debounceFn(...args: Parameters<T>): void {
-    // if (timeOut !== undefined) {
-    //   clearTimeout(timeOut)
-    // }
     clearTimeout(timeOut)
-    timeOut = setTimeout(() => cb(args), delay)
+    timeOut = setTimeout(() => cb(...args), delay)
   }
 }

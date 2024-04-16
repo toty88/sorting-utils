@@ -21,6 +21,6 @@ export const throttle = <T extends AnyFunction>(
       timeOut = undefined
     }, delay)
 
-    return cb(args)
+    return cb(...args)
   }
 }
