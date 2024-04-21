@@ -1,9 +1,15 @@
-#Simple TS lib to test skills#
+Simple TS lib to test skills
 
 ```
-Included:
+Included
+
+Sorting methods:
 Merge Sort
 Quick Sort
 Insertion Sort
 Selection Sort
+
+Timing methods:
+debounce
+throttle
 ```
