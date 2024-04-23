@@ -1,4 +1,3 @@
-type ArrayOrNot<T> = T[] | unknown
+import { type ArrayOrNot } from '@/types'
 
-export const arraylable = <T extends ArrayOrNot<T>>(t: T): T | [] =>
-  Array.isArray(t) ? t : []
+export const arraylable = <T extends ArrayOrNot<T>>(t: T): T | [] => (Array.isArray(t) ? t : [])

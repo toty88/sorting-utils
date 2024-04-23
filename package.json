@@ -1,7 +1,7 @@
 {
   "name": "sorting-utils",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "main": "./dist/sorting-utils.umd.cjs",
   "exports": {

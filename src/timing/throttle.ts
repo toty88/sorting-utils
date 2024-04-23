@@ -1,4 +1,4 @@
-import { type AnyFunction } from '@/types/types'
+import { type AnyFunction } from '@/types'
 
 /**
  * The ReturnType utility type obtains the return type of a function type
