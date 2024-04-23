@@ -6,8 +6,9 @@
   "main": "./dist/sorting-utils.umd.cjs",
   "exports": {
     ".": {
-      "import": ".dist/sorting-utils.js",
-      "require": ".dist/sorting-utils.umd.cjs"
+      "import": "./dist/sorting-utils.js",
+      "require": "./dist/sorting-utils.umd.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "publishConfig": {
@@ -16,7 +17,6 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && vite build",
     "preview": "vite preview",
