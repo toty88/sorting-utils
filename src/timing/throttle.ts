@@ -1,4 +1,4 @@
-import { type AnyFunction } from '@/types'
+import type { GenericFunction } from '@/types'
 
 /**
  * The ReturnType utility type obtains the return type of a function type
@@ -7,13 +7,11 @@ import { type AnyFunction } from '@/types'
  */
 
 /** @see  throttle callback should be issued once then locked until time has passed */
-export const throttle = <T extends AnyFunction>(
-  cb: T,
-  delay: number
-): ((...args: Parameters<T>) => ReturnType<AnyFunction>) => {
+
+export const throttle = (cb: GenericFunction, delay: number): GenericFunction => {
   let timeOut: NodeJS.Timeout | undefined
 
-  return function throttleFn(...args: Parameters<T>): ReturnType<AnyFunction> {
+  return function throttleFn(...args: Parameters<GenericFunction>): ReturnType<GenericFunction> {
     if (timeOut !== undefined) {
       return
     }
@@ -21,6 +19,6 @@ export const throttle = <T extends AnyFunction>(
       timeOut = undefined
     }, delay)
 
-    return cb(...args)
+    return cb(args)
   }
 }

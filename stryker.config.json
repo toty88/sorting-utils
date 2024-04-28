@@ -7,9 +7,9 @@
   "testRunner_comment": "Take a look at https://stryker-mutator.io/docs/stryker-js/vitest-runner for information about the vitest plugin.",
   "coverageAnalysis": "perTest",
   "allowConsoleColors": true,
-  "mutate": ["src/**/*.ts"],
+  "mutate": ["src/**/*.ts", "!src/**/__tests__/*"],
   "ignoreStatic": true,
-  "ignorePatterns": [".husky", ".vscode", "coverage", "dist"],
+  "ignorePatterns": [".husky", ".vscode", "coverage", "dist", "commitlint.config.ts"],
   "checkers": ["typescript"],
   "tsconfigFile": "tsconfig.json",
   "typescriptChecker": {
