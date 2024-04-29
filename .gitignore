@@ -13,7 +13,7 @@ dist-ssr
 .husky
 .vscode
 coverage
-reports/*
+reports
 *.local
 
 # Editor directories and files

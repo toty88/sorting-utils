@@ -63,4 +63,18 @@ describe('debounce', () => {
     vi.advanceTimersByTime(201)
     expect(originalFn).toHaveBeenCalledTimes(2)
   })
+
+  it('myReduceFn([1, 2, 3]) fn should return 6', () => {
+    const myReduceFn = (x: number[]): number =>
+      x.reduce((prev: number, curr: number) => {
+        const x = prev
+        return x + curr
+      }, 0)
+    const originalFn = vi.fn(myReduceFn)
+    const debouncedFn = debounce(originalFn, 200)
+    debouncedFn()
+    debouncedFn()
+    vi.advanceTimersByTime(201)
+    expect(originalFn([1, 2, 3])).toBe(6)
+  })
 })

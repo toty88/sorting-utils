@@ -1,19 +1,17 @@
-// import { type AnyFunction } from '@/types/types'
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+import type { GenericFunction } from '@/types'
 
 /**
- * The Parameters utility type lets you get the parameters of a function type.
- * type Parameters<T extends (...args: any) => any> = T extends (...args: infer P) => any ? P : never
+ * @param cb: callback function of type: (...args: any[]) => any
+ * @param delay: expected time in ms before trigger cb
+ * @returns callback function passed as argument
  */
-
-/** @see  debounce callback should be issued once within set time, if debounce called again time gets reset */
-export const debounce = <T extends (...args: Parameters<T>) => ReturnType<T>>(
-  cb: T,
-  delay: number
-): ((...args: Parameters<T>) => void) => {
+/** @see  debounce locks cb within given time but time gets reseted if debounce called again */
+export const debounce = (cb: GenericFunction, delay: number): GenericFunction => {
   let timeOut: NodeJS.Timeout
 
-  return function debounceFn(...args: Parameters<T>): void {
+  return function debounceFn(...args: Parameters<GenericFunction>): ReturnType<GenericFunction> {
     clearTimeout(timeOut)
-    timeOut = setTimeout(() => cb(...args), delay)
+    timeOut = setTimeout(() => cb(args), delay)
   }
 }

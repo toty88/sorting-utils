@@ -1,7 +1,7 @@
 import { selectionSort } from '../selectionSort'
 import { describe, expect, test } from 'vitest'
 
-describe('selectionSort', () => {
+describe('asc selectionSort with numbers', () => {
   test.each([
     [[], []],
     [[2], [2]],
@@ -22,36 +22,57 @@ describe('selectionSort', () => {
   })
 })
 
-describe('ascStrMergeSort', () => {
+describe('desc selectionSort with numbers', () => {
   test.each([
     [[], []],
-    [['hola'], ['hola']],
+    [[2], [2]],
     [
-      ['hola', 'mundo', 'cruel'],
-      ['mundo', 'hola', 'cruel']
+      [5, 2],
+      [5, 2]
     ],
     [
-      ['che', 'todo', 'bien?'],
-      ['todo', 'che', 'bien?']
+      [8, 3, 5, 7, 1],
+      [8, 7, 5, 3, 1]
+    ],
+    [
+      [3, 2, 5, 8, 10, 7, 22, 1],
+      [22, 10, 8, 7, 5, 3, 2, 1]
     ]
-  ])('desStrMergeSort(%j) should be %j', (arg1, expected) => {
+  ])('selectionSort(%j) should be %j', (arg1, expected) => {
     expect(selectionSort(arg1, (a, b) => a < b)).toStrictEqual(expected)
   })
 })
 
-describe('desStrMergeSort', () => {
+describe('asc selectionSort with strings', () => {
   test.each([
     [[], []],
-    [['hola'], ['hola']],
+    [['hello'], ['hello']],
     [
-      ['hola', 'mundo', 'cruel'],
-      ['cruel', 'hola', 'mundo']
+      ['hello', 'world', 'awesome'],
+      ['awesome', 'hello', 'world']
     ],
     [
-      ['che', 'todo', 'bien?'],
-      ['bien?', 'che', 'todo']
+      ['hey', 'whats', 'up?'],
+      ['hey', 'up?', 'whats']
     ]
-  ])('desStrMergeSort(%j) should be %j', (arg1, expected) => {
+  ])('selectionSort(%j) should be %j', (arg1, expected) => {
     expect(selectionSort(arg1, (a, b) => a > b)).toStrictEqual(expected)
+  })
+})
+
+describe('desc selectionSort with strings', () => {
+  test.each([
+    [[], []],
+    [['hello'], ['hello']],
+    [
+      ['hello', 'world', 'awesome'],
+      ['world', 'hello', 'awesome']
+    ],
+    [
+      ['hey', 'whats', 'up?'],
+      ['whats', 'up?', 'hey']
+    ]
+  ])('desStrSelectionSort(%j) should be %j', (arg1, expected) => {
+    expect(selectionSort(arg1, (a, b) => a < b)).toStrictEqual(expected)
   })
 })

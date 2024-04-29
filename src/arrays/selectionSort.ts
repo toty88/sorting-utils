@@ -1,7 +1,7 @@
 import { swap } from '@/arrays'
 
 /**
- * Sorts an array of numbers using the selection sort algorithm.
+ * Sorts an array of T using the selection sort algorithm.
  *
  * Selection sort iterates through the array, finding the minimum element
  * and swapping it with the element at the current position. This process repeats

@@ -1,19 +1,16 @@
-import { type AnyFunction } from '@/types/types'
+import type { GenericFunction } from '@/types'
 
 /**
- * The ReturnType utility type obtains the return type of a function type
- * The Parameters utility type lets you get the parameters of a function type.
- * type Parameters<T extends (...args: any) => any> = T extends (...args: infer P) => any ? P : never
+ * @param cb: callback function of type: (...args: any[]) => any
+ * @param delay: expected time in ms to lock cb before it can be triggerd
+ * @returns callback function passed as argument
  */
+/** @see  throttle locks cb within given time before it can be triggered again */
 
-/** @see  throttle callback should be issued once then locked until time has passed */
-export const throttle = <T extends AnyFunction>(
-  cb: T,
-  delay: number
-): ((...args: Parameters<T>) => ReturnType<AnyFunction>) => {
+export const throttle = (cb: GenericFunction, delay: number): GenericFunction => {
   let timeOut: NodeJS.Timeout | undefined
 
-  return function throttleFn(...args: Parameters<T>): ReturnType<AnyFunction> {
+  return function throttleFn(...args: Parameters<GenericFunction>): ReturnType<GenericFunction> {
     if (timeOut !== undefined) {
       return
     }
@@ -21,6 +18,6 @@ export const throttle = <T extends AnyFunction>(
       timeOut = undefined
     }, delay)
 
-    return cb(...args)
+    return cb(args)
   }
 }
