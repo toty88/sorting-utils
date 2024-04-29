@@ -1,7 +1,7 @@
 import { merge } from '@/arrays/merge'
 
 /**
- * Sorts an array of numbers using the merge sort algorithm.
+ * Sorts an array of <T> using the merge sort algorithm.
  *
  * Merge sort works by recursively dividing the array into halves, then sorting
  * those halves independently, and finally merging the sorted halves back together
@@ -12,7 +12,7 @@ import { merge } from '@/arrays/merge'
  *
  * @param arr The array of <T> to be sorted
  * @param compare A function which takes two T arguments, compare them and returns a boolean
- * @returns A new sorted array (does not modify the original array)
+ * @returns A new sorted array (does not modify the original one)
  */
 export const mergeSort = <T>(arr: T[], compare: (left: T, right: T) => boolean): T[] => {
   if (arr.length <= 1) return arr

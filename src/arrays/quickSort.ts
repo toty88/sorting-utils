@@ -23,7 +23,7 @@ const pivot = <T>(
 }
 
 /**
- * Sorts an array of numbers using the quicksort algorithm.
+ * Sorts an array of <T> using the quicksort algorithm.
  *
  * Quicksort works by selecting a pivot element from the array, partitioning the
  * array into two sub-arrays: elements less than the pivot and elements
